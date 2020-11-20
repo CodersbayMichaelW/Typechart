@@ -146,7 +146,7 @@ public class Controller {
     public void updateBackgroundIfImageOrColorIsSelected(boolean newVal) {
         // Center -> Typechart
         if (newVal) {
-            appData.getBackgroundImageContainer().setStyle("-fx-background-image: url(./image/background/" + appData.getBackgroundImage() + ");\n" +
+            appData.getBackgroundImageContainer().setStyle("-fx-background-image: url(/image/background/" + appData.getBackgroundImage() + ");\n" +
                     "-fx-opacity: " + appData.getBackgroundOpacity() + ";\n");
         } else {
             appData.getBackgroundImageContainer().setStyle("-fx-background-color: rgba(" + appData.getBackgroundColor() + "," + appData.getBackgroundOpacity() + ");");

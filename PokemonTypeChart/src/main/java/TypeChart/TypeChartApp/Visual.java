@@ -6,9 +6,13 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+
+import java.io.File;
+import java.net.URL;
 
 public class Visual {
     TypeChartAppSingleton appData;
@@ -23,7 +27,15 @@ public class Visual {
     public void setSceneLayout(Stage stage) {
         stage.setTitle("TypeChart");
         stage.setScene(appData.getScene()); // add the Scene to the Stage
-        appData.getScene().getStylesheets().addAll(this.getClass().getResource("../../CSS/style.css").toExternalForm());
+
+        try {
+//            appData.getScene().getStylesheets().addAll(this.getClass().getResource("../../CSS/style.css").toExternalForm());
+            appData.getScene().getStylesheets().add("CSS/style.css");
+        }
+        catch (Exception e) {
+            System.out.println("Can't find the CSS-File: " + e);
+        }
+
         stage.show(); // show me the Stage on the screen
     }
 
@@ -57,7 +69,8 @@ public class Visual {
             appData.setCenterLayout(new StackPane()); // Stackpane that holds the background image and the Type chart
             appData.setBackgroundImageContainer(new HBox());// make a Box to set the background-image
             appData.getBackgroundImageContainer().setId("background-image"); // set background
-            appData.getBackgroundImageContainer().setStyle("-fx-background-image: url(./image/background/" + appData.getBackgroundImage() + ");\n" +
+
+            appData.getBackgroundImageContainer().setStyle("-fx-background-image: url(/image/background/" + appData.getBackgroundImage() + ");\n" +
                     "-fx-opacity: " + appData.getBackgroundOpacity() + ";\n");
 
             appData.getCenterLayout().getChildren().addAll(appData.getBackgroundImageContainer(), appData.getTypeweaknessbox()); // add both Boxes together | Type comes before Image

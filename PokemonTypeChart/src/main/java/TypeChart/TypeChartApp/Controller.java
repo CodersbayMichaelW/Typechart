@@ -9,6 +9,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -130,9 +133,9 @@ public class Controller {
         imgContainer.setVgap(5);
 
         for (String typeName : typelist) {
-            String imgPath = "./image/type/" + typeName + ".png";
             // create image
-            Image image = new Image(imgPath);
+            System.out.println(getClass().getResource("/image/type/" + typeName + ".png"));
+            Image image = new Image(String.valueOf(getClass().getResource("/image/type/" + typeName + ".png")));
             // set imageView
             ImageView imageView = new ImageView(image);
             // set fit height and width of the image view

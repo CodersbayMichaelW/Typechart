@@ -18,13 +18,28 @@ public class API {
         connection = null;
         utility = new Utilities();
 
-        URL url = getClass().getResource("../Database");
+//        try {
+//            System.out.println("This is my PATH: " + this.getClass().getResource("./"));
+//            System.out.println("This is my PATH: " + this.getClass().getClassLoader().getResource("Database"));
+//            System.out.println("This is my PATH: " + new File(String.valueOf(getClass())).toPath());
+//        } catch (Exception e) {
+//            System.out.println(e);
+//        }
+
+
+        URL url = getClass().getResource("/Database");
         path = new File(String.valueOf(url));
     }
 
     public void connectToDB() throws Exception {
         Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
-        connection = DriverManager.getConnection("jdbc:derby:" + path.getPath().substring(6));
+
+        // generate path
+        String pathString = path.toString();
+        pathString = pathString.replace("file:\\", "");
+//        pathString = pathString.replace("jar:", "");
+
+        connection = DriverManager.getConnection("jdbc:derby:" + pathString);
     }
 
     public HashMap<String, String> readCurrentTypeSettings() {

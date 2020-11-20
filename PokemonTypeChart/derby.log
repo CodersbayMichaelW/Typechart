@@ -1,13 +1,13 @@
 ----------------------------------------------------------------
-Wed Nov 18 18:59:11 CET 2020:
-Booten von Derby-Version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): Instanz a816c00e-0175-dc82-a433-000006a78e88
-für Datenbankverzeichnis C:\Users\Michael.Michael-HP\Desktop\PokemonApp\TypeChart\PokemonTypeChart\target\classes\Database mit Class Loader jdk.internal.loader.ClassLoaders$AppClassLoader@3764951d
+Fri Nov 20 13:42:47 CET 2020:
+Booten von Derby-Version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): Instanz a816c00e-0175-e5ad-b0b2-000006b0fc50
+für Datenbankverzeichnis C:\Users\Michael.Michael-HP\Desktop\typechart-github\PokemonTypeChart\target\classes\Database mit Class Loader jdk.internal.loader.ClassLoaders$AppClassLoader@3764951d
 Geladen aus file:/C:/Derby/db-derby-10.15.2.0-bin/lib/derby.jar
 java.vendor=Oracle Corporation
 java.runtime.version=15.0.1+9-18
-user.dir=C:\Users\Michael.Michael-HP\Desktop\PokemonApp\TypeChart\PokemonTypeChart
+user.dir=C:\Users\Michael.Michael-HP\Desktop\typechart-github\PokemonTypeChart
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0
-derby.system.home=null
+derby.system.home=/home/janbodnar/.derby
 Datenbank-Class Loader wurde gestartet - derby.database.classpath=''

@@ -28,7 +28,13 @@ public class Utilities {
 // ------------- load images into an Array from aa folder -------------
     public ArrayList<String> readAllImagesInBackgroundFolder() {
         // FilePath
-        File dir = new File("./src/main/java/image/background");
+//        URL url = getClass().getResource("/image/background/");
+        File dir = new File(getClass().getResource("image/background/").getPath());
+
+//        System.out.println(getClass().getResource("/image/background/"));
+//        System.out.println(dir.getPath());
+//        System.out.println(dir.isDirectory());
+
         // array of supported extensions (use a List if you prefer)
         String[] EXTENSIONS = new String[]{
                 "gif", "png", "bmp", "jpg"  // and other formats if you want
